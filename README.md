@@ -37,7 +37,7 @@
   
 * I have configured the DNS Records in route53 
 
--- Domains i have used
+-- Domain names i have used
  
     For wordpress : wordpress.sageos.tk
     
