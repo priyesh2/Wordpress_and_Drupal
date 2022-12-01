@@ -1,4 +1,5 @@
-# Wordpress_and_Drupal
+# Wordpress_and_Drupal using ansible playbook with tags
+
 IMPORTANT --FILES
 (combined.yml , combined.vars , nginxconfub1.tmpl , nginxconfub.tmpl , wordpress.config.tmpl)
 
@@ -20,11 +21,17 @@ Before that make changes to the hosts inventory , you can use the hosts from the
    
    lamp - for installing nginx,php-fpm and ubuntu
    
+
+* FOR INSTALLING NGINX AND PHP_FPM ONLY
+
+  cmd : ansible-playbook -i hosts combined.yml --tag=lamp
    
 * FOR WORDPRESS INSTALLTAION run the playbook as below
   
-   -- ansible-playbook -i hosts combined.yml --tag=lamp,wordpress
+   cmd : ansible-playbook -i hosts combined.yml --tag=lamp,wordpress
    
 * FOR WORDPRESS INSTALLTAION run the playbook as below
 
-  -- ansible-playbook -i hosts combined.yml --tag=lamp,drupal
+  cmd : ansible-playbook -i hosts combined.yml --tag=lamp,drupal
+  
+  THIS IS USED AS A FLEXIBLE INSTALLATION OF DRUPAL AND WORDPRESS ON UBUNTU
