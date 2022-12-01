@@ -36,7 +36,9 @@ Before that make changes to the hosts inventory , you can use the hosts from the
   
 * I have configured the DNS Records in route53
  -- Domains i have used
+ 
     For wordpress : wordpress.sageos.tk
+    
     For drupal : drupal.sageos.tk
     
     You can updated these values on the file combined.vars and change as per your needs
