@@ -35,7 +35,8 @@
     - name: "Installing nginx and php-fpm"
       apt:
         name: "{{ packs }}"
-        state: present  
+        state: present
+        update_cache: yes
       tags:
         - stack
 
