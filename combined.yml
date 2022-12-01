@@ -58,7 +58,7 @@
       tags:
         - wordpress
   
-    - name: "Creating virtual host for drupal"
+    - name: "Creating vhost for drupal"
       template:
         src: nginxconfub.tmpl
         dest: "{{ drupal_conf_dest }}"
@@ -67,7 +67,7 @@
       tags:
         - drupal
 
-    - name: "Creating virtual host for wordpress"
+    - name: "Creating vhost for wordpress"
       template:
         src: nginxconfub1.tmpl
         dest: "{{ wordpress_conf_dest }}"
@@ -188,7 +188,7 @@
       tags:
         - wordpress
      
-    - name: "Extracting drupal zip"
+    - name: "Extracting drupal archive"
       unarchive:
         src: /tmp/drupal-10.0.0-rc1.tar.gztar.gz
         dest: /tmp/
@@ -196,7 +196,7 @@
       tags:
         - drupal
     
-    - name: "Extracting Wordpress zip"
+    - name: "Extracting Wordpress archive"
       unarchive:
         src: /tmp/wordpress.tar.gz
         dest: /tmp/
