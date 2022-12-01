@@ -29,9 +29,9 @@ Before that make changes to the hosts inventory , you can use the hosts from the
    
 * FOR WORDPRESS INSTALLTAION run the playbook as below
   
-   $ ansible-playbook -i hosts combined.yml --tag=stack,drupal
+   $ ansible-playbook -i hosts combined.yml --tag=stack,wordpress
    
-* FOR WORDPRESS INSTALLTAION run the playbook as below
+* FOR DRUPAL INSTALLTAION run the playbook as below
 
   $ ansible-playbook -i hosts combined.yml --tag=lamp,drupal
   
