@@ -4,6 +4,7 @@ IMPORTANT --FILES
 (combined.yml , combined.vars , nginxconfub1.tmpl , nginxconfub.tmpl , wordpress.config.tmpl)
 
 Installing Wordpress and drupal using ansible on ubuntu with nginx and php-fpm
+
 Before that make changes to the hosts inventory , you can use the hosts from the default location or can be created as per your need
 
   *Sample hosts file
