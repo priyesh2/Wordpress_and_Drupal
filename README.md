@@ -1,4 +1,4 @@
-# Wordpress_and_Drupal using ansible-playbook with tags
+# Wordpress_and_Drupal installtion using ansible-playbook with tags
 
 IMPORTANT --FILES
 (combined.yml , combined.vars , nginxconfub1.tmpl , nginxconfub.tmpl , wordpress.config.tmpl)
