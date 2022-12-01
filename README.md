@@ -48,7 +48,7 @@
   {THIS IS USED FOR A FLEXIBLE INSTALLATION OF DRUPAL AND WORDPRESS ON UBUNTU}
   
   -------------------------------------------------------------------------------
-  Notes : In future i will add support for other distributions,
+  Notes : In future i will add support for other distributions
   
           The outputs are not attached in here cause i don't want to mess up the readme file.
           
