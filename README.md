@@ -25,15 +25,15 @@ Before that make changes to the hosts inventory , you can use the hosts from the
 
 * FOR INSTALLING NGINX ,MARIADB AND PHP_FPM 
 
-  cmd : ansible-playbook -i hosts combined.yml --tag=stack
+  $ ansible-playbook -i hosts combined.yml --tag=stack,drupal
    
 * FOR WORDPRESS INSTALLTAION run the playbook as below
   
-   cmd : ansible-playbook -i hosts combined.yml --tag=stack,wordpress
+   $ ansible-playbook -i hosts combined.yml --tag=stack,drupal
    
 * FOR WORDPRESS INSTALLTAION run the playbook as below
 
-  cmd : ansible-playbook -i hosts combined.yml --tag=stack,drupal
+  $ ansible-playbook -i hosts combined.yml --tag=lamp,drupal
   
 * I have configured the DNS Records in route53 as a test(you can update it from the combined.vars file)
  -- Domains i have used
