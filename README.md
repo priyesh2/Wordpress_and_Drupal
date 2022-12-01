@@ -1,11 +1,11 @@
 # Wordpress_and_Drupal installtion using ansible-playbook with tags
 
-IMPORTANT --FILES
+* IMPORTANT --FILES
 (combined.yml , combined.vars , nginxconfub1.tmpl , nginxconfub.tmpl , wordpress.config.tmpl)
 
 Installing Wordpress and drupal using ansible on ubuntu with nginx and php-fpm
 
-Before that make changes to the hosts inventory , you can use the hosts from the default location or can be created as per your need
+* Before that make changes to the hosts inventory , you can use the hosts from the default location or can be created as per your need
 
   *Sample hosts file
  
@@ -36,7 +36,8 @@ Before that make changes to the hosts inventory , you can use the hosts from the
   $ ansible-playbook -i hosts combined.yml --tag=stack,drupal
   
 * I have configured the DNS Records in route53 as a test(you can update it from the combined.vars file)
- -- Domains i have used
+
+-- Domains i have used
  
     For wordpress : wordpress.sageos.tk
     
