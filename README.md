@@ -3,7 +3,7 @@
 * IMPORTANT --FILES
 (combined.yml , combined.vars , nginxconfub1.tmpl , nginxconfub.tmpl , wordpress.config.tmpl)
 
-Installing Wordpress and drupal using ansible on ubuntu with nginx and php-fpm
+Installing Wordpress and drupal using ansible on ubuntu with nginx,mariadb and php-fpm
 
 * Before that make changes to the hosts inventory , you can use the hosts from the default location or can be created as per your need
 
@@ -51,4 +51,8 @@ Installing Wordpress and drupal using ansible on ubuntu with nginx and php-fpm
   Notes : In future i will add support for other distributions,
   
           The outputs are not attached in here cause i don't want to mess up the readme file.
+          
+          
+          
+  ------------------------- USE IT ON UBUNTU DISTRIBUTIONS---------------------------------
           
