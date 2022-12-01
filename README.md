@@ -13,26 +13,26 @@ Before that make changes to the hosts inventory , you can use the hosts from the
 
 * Here we are using ansible playbook string method for the installation process using tags
 
- - We have used tags like drupal , wordpress , lamp(lamp is required for installation of both wordpress and drupal)
+ - We have used tags like drupal , wordpress , stack (stack is required for installation of both wordpress and drupal)
    
    drupal - for druapl installation
    
    wordpress - for wordpress installation
    
-   lamp - for installing nginx,php-fpm and ubuntu
+   stack - for installing nginx,php-fpm and ubuntu
    
 
 * FOR INSTALLING NGINX ,MARIADB AND PHP_FPM 
 
-  cmd : ansible-playbook -i hosts combined.yml --tag=lamp
+  cmd : ansible-playbook -i hosts combined.yml --tag=stack
    
 * FOR WORDPRESS INSTALLTAION run the playbook as below
   
-   cmd : ansible-playbook -i hosts combined.yml --tag=lamp,wordpress
+   cmd : ansible-playbook -i hosts combined.yml --tag=stack,wordpress
    
 * FOR WORDPRESS INSTALLTAION run the playbook as below
 
-  cmd : ansible-playbook -i hosts combined.yml --tag=lamp,drupal
+  cmd : ansible-playbook -i hosts combined.yml --tag=stack,drupal
   
 * I have configured the DNS Records in route53
  -- Domains i have used
