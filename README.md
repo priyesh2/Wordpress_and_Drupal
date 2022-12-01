@@ -35,3 +35,5 @@ Before that make changes to the hosts inventory , you can use the hosts from the
   cmd : ansible-playbook -i hosts combined.yml --tag=lamp,drupal
   
   THIS IS USED AS A FLEXIBLE INSTALLATION OF DRUPAL AND WORDPRESS ON UBUNTU
+  
+  Note : In future i will add support for other distributions
