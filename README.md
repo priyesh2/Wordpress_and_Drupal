@@ -1,9 +1,9 @@
 # Wordpress_and_Drupal installtion using ansible-playbook with tags
 
-* IMPORTANT --FILES
+* IMPORTANT-FILES
 (combined.yml , combined.vars , nginxconfub1.tmpl , nginxconfub.tmpl , wordpress.config.tmpl , my.cnf.tmpl)
 
-Installing Wordpress and drupal using ansible on ubuntu with nginx,mariadb and php-fpm
+* Installing Wordpress and drupal using ansible on ubuntu with nginx,mariadb and php-fpm *
 
 * Before that make changes to the hosts inventory , you can use the hosts from the default location or can be created as per your need
 
