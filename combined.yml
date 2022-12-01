@@ -1,6 +1,6 @@
 ---
 - name: "Wordpress or Drupal installation"
-  hosts: ubantu
+  hosts: ubuntu
   become: true
   vars_files:
     - combined.vars
