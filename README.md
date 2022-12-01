@@ -37,7 +37,8 @@
   
 * I have configured the DNS Records in route53 after running the playbook
 
-* What is route53? use the url to read about it.
+* What is route53? use the url to find about it.
+
      URL: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html
 
 -- Domain names i have used
