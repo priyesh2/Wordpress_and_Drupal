@@ -43,7 +43,7 @@ Installing Wordpress and drupal using ansible on ubuntu with nginx and php-fpm
     
     For drupal : drupal.sageos.tk
     
-    FROM THE combined.vars file , you can update the domain names i have used and change it according to your need.
+    FROM the combined.vars file , you can update the domain names i have used and change it according to your need.
   
   {THIS IS USED FOR A FLEXIBLE INSTALLATION OF DRUPAL AND WORDPRESS ON UBUNTU}
   
