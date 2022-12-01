@@ -30,14 +30,14 @@
       become: yes
       apt_repository: repo=ppa:ondrej/php
       tags:
-        - lamp
+        - stack
 
     - name: "Installing nginx and php-fpm"
       apt:
         name: "{{ packs }}"
         state: present  
       tags:
-        - lamp
+        - stack
 
     - name: "Creating document root for drupal "
       file:
@@ -81,7 +81,7 @@
         state: absent
       ignore_errors: true
       tags:
-        - lamp
+        - stack
 
     - name: "Restarting and enabling services"
       service:
@@ -92,28 +92,28 @@
         - "nginx"
         - "php8.1-fpm"
       tags:
-        - lamp
+        - stack
     
     - name: " installing needful packages"
       apt: 
         name: "{{ needs }}"
         state: present
       tags:
-        - lamp
+        - stack
 
     - name: "Installing mysql client"
       pip:
         name: mysqlclient
         state: present
       tags:
-        - lamp
+        - stack
  
     - name: "Installing mariadb-server"
       apt:
         name: "{{ packages }}"
         state: present  
       tags:
-        - lamp
+        - stack
 
     - name: "Restarting and enable mariadb-server"
       service:
@@ -121,7 +121,7 @@
         state: restarted
         enabled: true
       tags:
-        - lamp
+        - stack
      
     - name: "Copying template for mysql"
       template:
@@ -131,7 +131,7 @@
         group: root
         mode: 0600
       tags:
-        - lamp
+        - stack
 
     - name: "Setting root password"
       mysql_user:
@@ -139,7 +139,7 @@
         password: "{{ mysql_pass }}"
         host: "%"
       tags:
-        - lamp
+        - stack
 
     - name: "Remove anonymous user"
       mysql_user:
@@ -147,21 +147,21 @@
         host_all: true
         state: absent
       tags:
-        - lamp
+        - stack
 
     - name: " Remove test db"
       mysql_db:
         name: "test"
         state: absent
       tags:
-        - lamp
+        - stack
         
     - name: "Creating new database {{ extra_db }}"
       mysql_db:
         name: "{{ extra_db }}"
         state: present
       tags:
-        - lamp
+        - stack
    
     - name: "Creating new user {{ extra_user }}"
       mysql_user:
@@ -170,7 +170,7 @@
         password: "{{ extra_pass }}"
         priv: '{{ extra_db }}.*:ALL'
       tags:
-        - lamp  
+        - stack 
      
     - name: "Downloading drupal"
       get_url:
@@ -241,4 +241,4 @@
         - "nginx"
         - "php8.1-fpm"
       tags:
-        - lamp 
+        - stack
