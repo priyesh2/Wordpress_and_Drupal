@@ -35,7 +35,7 @@
 
   $ ansible-playbook -i hosts combined.yml --tag=stack,drupal
   
-* I have configured the DNS Records in route53 
+* I have configured the DNS Records in route53 after running the playbook
 
 -- Domain names i have used
  
