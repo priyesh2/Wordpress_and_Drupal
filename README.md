@@ -1,5 +1,9 @@
 # Wordpress_and_Drupal installtion using ansible-playbook with tags
 
+* To install ansible on your machine , please use the steps provided in the below url.
+  
+  URL : https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
+
 * IMPORTANT-FILES
 (combined.yml , hosts , combined.vars , nginxconfub1.tmpl , nginxconfub.tmpl , wordpress.config.tmpl , my.cnf.tmpl)
 
