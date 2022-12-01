@@ -8,5 +8,11 @@ Before that make changes to the hosts inventory , you can use the hosts from the
  
 
 * Here we are using ansible playbook string method for the installation process using tags
-* FOR WORDPRESS INSTALLTAION
+
+ - We have used tags like drupal , wordpress , lamp(lamp is required for installation of both wordpress and drupal)
+   drupal - for druapl installation
+   wordpress - for wordpress installation
+   lamp - for installing nginx,php-fpm and ubuntu
+   
+* FOR WORDPRESS INSTALLTAION run the playbook as below
   
