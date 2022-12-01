@@ -35,13 +35,15 @@ Installing Wordpress and drupal using ansible on ubuntu with nginx and php-fpm
 
   $ ansible-playbook -i hosts combined.yml --tag=stack,drupal
   
-* I have configured the DNS Records in route53 as a test(you can update it from the combined.vars file)
+* I have configured the DNS Records in route53 
 
 -- Domains i have used
  
     For wordpress : wordpress.sageos.tk
     
     For drupal : drupal.sageos.tk
+    
+    FROM THE combined.vars file , you can update the domain names i have used and change it according to your need.
   
   {THIS IS USED FOR A FLEXIBLE INSTALLATION OF DRUPAL AND WORDPRESS ON UBUNTU}
   
