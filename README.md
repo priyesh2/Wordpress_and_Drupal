@@ -9,7 +9,7 @@
 
   * Sample hosts file
  
-   "YOURIP" ansible_user="(username)" ansible_port=("SSH PORT") ansible_ssh_private_key_file="(PRIVATE KEY FILE)"
+   "IP" ansible_user="(username)" ansible_port=("SSH PORT") ansible_ssh_private_key_file="(PRIVATE KEY FILE)"
  
 
 * Here we are using ansible playbook for the installation process using tags
