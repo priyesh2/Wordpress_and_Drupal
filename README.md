@@ -1,7 +1,7 @@
 # Wordpress_and_Drupal installtion using ansible-playbook with tags
 
 * IMPORTANT-FILES
-(combined.yml , combined.vars , nginxconfub1.tmpl , nginxconfub.tmpl , wordpress.config.tmpl , my.cnf.tmpl)
+(combined.yml , hosts , combined.vars , nginxconfub1.tmpl , nginxconfub.tmpl , wordpress.config.tmpl , my.cnf.tmpl)
 
 * Installing Wordpress and drupal using ansible on ubuntu with nginx,mariadb and php-fpm *
 
@@ -48,7 +48,7 @@
   {THIS IS USED FOR A FLEXIBLE INSTALLATION OF DRUPAL AND WORDPRESS ON UBUNTU}
   
   -------------------------------------------------------------------------------
-  Notes : In future i will add support for other distributions
+  Note : In future i will add support for other distributions
   
           The outputs are not attached in here cause i don't want to mess up the readme file.
           
