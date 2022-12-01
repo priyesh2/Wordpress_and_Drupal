@@ -12,7 +12,7 @@ Before that make changes to the hosts inventory , you can use the hosts from the
    "YOURIP" ansible_user="(username)" ansible_port=("SSH PORT") ansible_ssh_private_key_file="(PRIVATE KEY FILE)"
  
 
-* Here we are using ansible playbook string method for the installation process using tags
+* Here we are using ansible playbook for the installation process using tags
 
  - We have used tags like drupal , wordpress , stack (stack is required for installation of both wordpress and drupal)
    
@@ -35,16 +35,14 @@ Before that make changes to the hosts inventory , you can use the hosts from the
 
   cmd : ansible-playbook -i hosts combined.yml --tag=stack,drupal
   
-* I have configured the DNS Records in route53
+* I have configured the DNS Records in route53 as a test(you can update it from the combined.vars file)
  -- Domains i have used
  
     For wordpress : wordpress.sageos.tk
     
     For drupal : drupal.sageos.tk
-    
-    You can updated these values on the file combined.vars and change as per your needs
   
-  {THIS IS USED AS A FLEXIBLE INSTALLATION OF DRUPAL AND WORDPRESS ON UBUNTU}
+  {THIS IS USED FOR A FLEXIBLE INSTALLATION OF DRUPAL AND WORDPRESS ON UBUNTU}
   
   -------------------------------------------------------------------------------
   Note : In future i will add support for other distributions
