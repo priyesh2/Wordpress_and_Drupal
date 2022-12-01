@@ -1,2 +1,2 @@
 # Wordpress_and_Drupal
-Wordpress and drupal using ansible
+Installing Wordpress and drupal using ansible
