@@ -16,7 +16,7 @@ Before that make changes to the hosts inventory , you can use the hosts from the
 
  - We have used tags like drupal , wordpress , stack (stack is required for installation of both wordpress and drupal)
    
-   drupal - for druapl installation
+   drupal - for drupal installation
    
    wordpress - for wordpress installation
    
@@ -25,7 +25,7 @@ Before that make changes to the hosts inventory , you can use the hosts from the
 
 * FOR INSTALLING NGINX ,MARIADB AND PHP_FPM 
 
-  $ ansible-playbook -i hosts combined.yml --tag=stack,drupal
+  $ ansible-playbook -i hosts combined.yml --tag=stack
    
 * FOR WORDPRESS INSTALLTAION run the playbook as below
   
@@ -33,7 +33,7 @@ Before that make changes to the hosts inventory , you can use the hosts from the
    
 * FOR DRUPAL INSTALLTAION run the playbook as below
 
-  $ ansible-playbook -i hosts combined.yml --tag=lamp,drupal
+  $ ansible-playbook -i hosts combined.yml --tag=stack,drupal
   
 * I have configured the DNS Records in route53 as a test(you can update it from the combined.vars file)
  -- Domains i have used
