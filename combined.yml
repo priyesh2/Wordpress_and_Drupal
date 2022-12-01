@@ -120,6 +120,7 @@
         name: mariadb     
         state: restarted
         enabled: true
+      when: install_mariadb | bool
       tags:
         - stack
      
