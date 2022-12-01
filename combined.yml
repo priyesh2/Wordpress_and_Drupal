@@ -76,7 +76,7 @@
       tags:
         - wordpress
 
-    - name: "removing deafault conf"
+    - name: "Removing default conf"
       ansible.builtin.file:
         path: /etc/nginx/sites-enabled/default
         state: absent
@@ -95,7 +95,7 @@
       tags:
         - stack
     
-    - name: " installing needful packages"
+    - name: "Installing needful packages"
       apt: 
         name: "{{ needs }}"
         state: present
@@ -151,7 +151,7 @@
       tags:
         - stack
 
-    - name: " Remove test db"
+    - name: "Remove test db"
       mysql_db:
         name: "test"
         state: absent
