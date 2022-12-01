@@ -20,7 +20,7 @@
    
    wordpress - for wordpress installation
    
-   stack - for installing nginx,php-fpm and ubuntu
+   stack - for installing nginx,php-fpm and mariadb
    
 
 * FOR INSTALLING NGINX ,MARIADB AND PHP_FPM 
