@@ -123,42 +123,6 @@
       tags:
         - stack
 
-    - name: "Creating document root for drupal "
-      file:
-         path: "{{ drupal_path }}"
-         state: directory
-         owner: "{{ nginx_owner }}"
-         group: "{{ nginx_group }}"
-      tags:
-        - drupal
-   
-    - name: "Creating document root for wordpress "
-      file:
-         path: "{{ wordpress_path }}"
-         state: directory
-         owner: "{{ nginx_owner }}"
-         group: "{{ nginx_group }}"
-      tags:
-        - wordpress
-  
-    - name: "Creating vhost for drupal"
-      template:
-        src: nginxconfub.tmpl
-        dest: "{{ drupal_conf_dest }}"
-        owner: "{{ nginx_conf_owner }}"
-        group: "{{ nginx_conf_group }}"
-      tags:
-        - drupal
-
-    - name: "Creating vhost for wordpress"
-      template:
-        src: nginxconfub1.tmpl
-        dest: "{{ wordpress_conf_dest }}"
-        owner: "{{ nginx_conf_owner }}"
-        group: "{{ nginx_conf_group }}"
-      tags:
-        - wordpress
-
     - name: "Removing default conf"
       ansible.builtin.file:
         path: /etc/nginx/sites-enabled/default
@@ -177,13 +141,14 @@
         - "php8.1-fpm"
       tags:
         - stack
-    
+ 
     - name: "Installing needful packages"
       apt: 
         name: "{{ needs }}"
         state: present
       tags:
         - stack
+        - mysql
 
     - name: "Installing mysql client"
       pip:
@@ -191,6 +156,7 @@
         state: present
       tags:
         - stack
+        - mysql
  
     - name: "Installing mariadb-server"
       apt:
@@ -198,6 +164,7 @@
         state: present  
       tags:
         - stack
+        - mysql
 
     - name: "Restarting and enable mariadb-server"
       service:
@@ -207,6 +174,7 @@
       when: install_mariadb | bool
       tags:
         - stack
+        - mysql
      
     - name: "Copying template for mysql"
       template:
@@ -217,6 +185,7 @@
         mode: 0600
       tags:
         - stack
+        - mysql
 
     - name: "Setting root password"
       mysql_user:
@@ -225,7 +194,8 @@
         host: "%"
       tags:
         - stack
-
+        - mysql
+        
     - name: "Remove anonymous user"
       mysql_user:
         user: ""
@@ -233,6 +203,7 @@
         state: absent
       tags:
         - stack
+        - mysql
 
     - name: "Remove test db"
       mysql_db:
@@ -240,6 +211,7 @@
         state: absent
       tags:
         - stack
+        - mysql
         
     - name: "Creating new database {{ extra_db }}"
       mysql_db:
@@ -247,6 +219,7 @@
         state: present
       tags:
         - stack
+        - mysql
    
     - name: "Creating new user {{ extra_user }}"
       mysql_user:
@@ -255,14 +228,26 @@
         password: "{{ extra_pass }}"
         priv: '{{ extra_db }}.*:ALL'
       tags:
-        - stack 
-     
-    - name: "Downloading drupal"
-      get_url:
-        url: "{{ drupal_url }}"
-        dest: /tmp/drupal-10.0.0-rc1.tar.gztar.gz
+        - stack
+        - mysql 
+  
+    - name: "Creating document root for wordpress "
+      file:
+         path: "{{ wordpress_path }}"
+         state: directory
+         owner: "{{ nginx_owner }}"
+         group: "{{ nginx_group }}"
       tags:
-        - drupal
+        - wordpress
+
+    - name: "Creating vhost for wordpress"
+      template:
+        src: nginxconfub1.tmpl
+        dest: "{{ wordpress_conf_dest }}"
+        owner: "{{ nginx_conf_owner }}"
+        group: "{{ nginx_conf_group }}"
+      tags:
+        - wordpress
 
     - name: "Downloading wordpress"
       get_url:
@@ -270,15 +255,7 @@
         dest: /tmp/wordpress.tar.gz
       tags:
         - wordpress
-     
-    - name: "Extracting drupal archive"
-      unarchive:
-        src: /tmp/drupal-10.0.0-rc1.tar.gztar.gz
-        dest: /tmp/
-        remote_src: true
-      tags:
-        - drupal
-    
+
     - name: "Extracting Wordpress archive"
       unarchive:
         src: /tmp/wordpress.tar.gz
@@ -286,6 +263,59 @@
         remote_src: true
       tags:
         - wordpress
+
+    - name: "Copying files to documentroot /var/www/html/{{ wordpress_domain }}"
+      copy:
+        src: /tmp/wordpress/
+        dest: "/var/www/html/{{ wordpress_domain }}"
+        owner: "{{ nginx_owner }}"
+        group: "{{ nginx_group }}"
+        remote_src: true
+      tags:
+        - wordpress
+
+    - name: "Creating wp-config.php from template"
+      template:
+        src: wordpress.config.tmpl
+        dest: "/var/www/html/{{ wordpress_domain }}/wp-config.php"
+        owner: "{{ nginx_owner }}"
+        group: "{{ nginx_group }}"
+      tags:
+        - wordpress
+
+
+    - name: "Creating document root for drupal "
+      file:
+         path: "{{ drupal_path }}"
+         state: directory
+         owner: "{{ nginx_owner }}"
+         group: "{{ nginx_group }}"
+      tags:
+        - drupal
+
+    - name: "Creating vhost for drupal"
+      template:
+        src: nginxconfub.tmpl
+        dest: "{{ drupal_conf_dest }}"
+        owner: "{{ nginx_conf_owner }}"
+        group: "{{ nginx_conf_group }}"
+      tags:
+        - drupal
+    
+    - name: "Downloading drupal"
+      get_url:
+        url: "{{ drupal_url }}"
+        dest: /tmp/drupal-10.0.0-rc1.tar.gztar.gz
+      tags:
+        - drupal
+
+    - name: "Extracting drupal archive"
+      unarchive:
+        src: /tmp/drupal-10.0.0-rc1.tar.gztar.gz
+        dest: /tmp/
+        remote_src: true
+      tags:
+        - drupal
 
     - name: "Copying files to documentroot /var/www/html/{{ drupal_domain }}"
       copy:
@@ -296,26 +326,7 @@
         remote_src: true
       tags:
         - drupal
-              
-    - name: "Copying files to documentroot /var/www/html/{{ wordpress_domain }}"
-      copy:
-        src: /tmp/wordpress/
-        dest: "/var/www/html/{{ wordpress_domain }}"
-        owner: "{{ nginx_owner }}"
-        group: "{{ nginx_group }}"
-        remote_src: true
-      tags:
-        - wordpress
-            
-    - name: "Creating wp-config.php from template"
-      template:
-        src: wordpress.config.tmpl
-        dest: "/var/www/html/{{ wordpress_domain }}/wp-config.php"
-        owner: "{{ nginx_owner }}"
-        group: "{{ nginx_group }}"
-      tags:
-        - wordpress
-            
+
     - name: "Restarting services"
       service:
         name: "{{ item }}"
