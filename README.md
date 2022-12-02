@@ -1,4 +1,4 @@
-# Wordpress_and_Drupal installtion using ansible-playbook with tags
+# Wordpress_and_Drupal installtion on ansible-playbook using tags
 
   * Prerequisites for this project
 
