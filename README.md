@@ -1,19 +1,16 @@
 # Wordpress_and_Drupal installtion using ansible-playbook with tags
 
-* To install ansible on your machine , please use the steps provided in the below url.
+### Prerequisites for this project
+
+* INSTALLING ANSIBLE
   
   URL : https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 
-* IMPORTANT-FILES
-(combined.yml , hosts , combined.vars , nginxconfub1.tmpl , nginxconfub.tmpl , wordpress.config.tmpl , my.cnf.tmpl)
+* This playbook is used for installing Wordpress and Drupal using ansible on ubuntu with nginx,mariadb and php-fpm.
 
-* Installing Wordpress and drupal using ansible on ubuntu with nginx,mariadb and php-fpm *
+* Before running playbook , make changes to the hosts inventory , you can use the hosts from the default location or can be created on any location as per your need.
 
-* Before running playbook , make changes to the hosts inventory , you can use the hosts from the default location or can be created on any location as per your need
-
-  * Sample hosts file
- 
-   "IP" ansible_user="(username)" ansible_port=("SSH PORT") ansible_ssh_private_key_file="(PRIVATE KEY FILE)"
+  -Sample hosts file has been uploaded.
  
 
 * Here we are using ansible playbook for the installation process using tags
