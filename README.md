@@ -627,7 +627,7 @@ PLAY RECAP *********************************************************************
 
 ````
 
-* You can configure the DNS records and complete the installation , I have used route53 in here.
+* You can configure the DNS records and complete the wordpress or drupal installation , I have used route53 to configure DNS records for my websites.
 
 * What is route53?.
 
