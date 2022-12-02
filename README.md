@@ -28,9 +28,9 @@
   ````
   
   * Make sure that the hosts are accessible from the ansible master server by issuing a ping command
-  
-   $ ansible -i hosts all -m ping
-    ````
+   ````
+   [ec2-user@ap-south-1 ~]$ ansible -i hosts all -m ping
+   
    172.31.41.53 | SUCCESS => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python3"
@@ -40,9 +40,9 @@
    }
     ````
   * To list out tasks in the playbook
-   
-   $ ansible-playbook -i hosts combined.yml --list-tasks
-    ````
+  ````
+    [ec2-user@ap-south-1 ~]$ ansible-playbook -i hosts combined.yml --list-tasks
+    
     playbook: combined.yml
 
   play #1 (ubantu): Wordpress or Drupal installation    TAGS: []
