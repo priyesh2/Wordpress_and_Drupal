@@ -42,10 +42,12 @@
 
      URL: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html
 
-  
+   
+  ----------------------------------------------------------------------------
   {THIS IS USED FOR A FLEXIBLE INSTALLATION OF DRUPAL AND WORDPRESS ON UBUNTU}
+
   
-  -------------------------------------------------------------------------------
+  
   
   Note : In future i will add support for other distributions
           
