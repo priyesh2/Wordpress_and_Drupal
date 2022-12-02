@@ -22,9 +22,9 @@
        config file = /etc/ansible/ansible.cfg
        configured module search path = [u'/home/ec2-user/.ansible/plugins/modules',
                                    u'/usr/share/ansible/plugins/modules']
-      ansible python module location = /usr/lib/python2.7/site-packages/ansible
-      executable location = /usr/bin/ansible
-      python version = 2.7.18 (default, May 25 2022, 14:30:51) [GCC 7.3.1 20180712 (Red Hat 7.3.1-15)]
+       ansible python module location = /usr/lib/python2.7/site-packages/ansible
+       executable location = /usr/bin/ansible
+       python version = 2.7.18 (default, May 25 2022, 14:30:51) [GCC 7.3.1 20180712 (Red Hat 7.3.1-15)]
       ````
 * This playbook is used for installing Wordpress and Drupal using ansible on ubuntu with nginx,mariadb and php-fpm.
 
