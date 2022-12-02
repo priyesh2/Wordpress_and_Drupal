@@ -79,7 +79,7 @@
       Restarting services       TAGS: [stack]
    ````
  
-# EXPLAINING THE PLAYBOOK
+## vi combine.yml
 ````
 ---
 - name: "Wordpress or Drupal installation"
