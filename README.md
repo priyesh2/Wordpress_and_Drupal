@@ -13,7 +13,7 @@
 
   * Prerequisites for this project
 
-    * INSTALLING ANSIBLE( I have used amazon linux as the ansible master)
+    * INSTALLING ANSIBLE( I have used an ec2 instance amazon linux as the ansible master)
      ````
      $ sudo amazon-linux-extras install ansible2 -y
      
