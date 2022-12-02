@@ -234,7 +234,7 @@
       tags:
         - stack 
   
-  ## DOWNLOADIND AND EXTRACRTING DRUPAL AND WORDPRESS TO A TEMPORARY LOCATION
+  ## DOWNLOADIND AND EXTRACRTING DRUPAL AND WORDPRESS TO A TEMPORARY PATH IN REMOTE SOURCE
   
      - name: "Downloading drupal"
       get_url:
@@ -324,6 +324,7 @@
    
    stack - for installing nginx,php-fpm and mariadb
  ````
+ ### RUNNING THE PLAYBOOK...............
 
 * FOR INSTALLING NGINX ,MARIADB AND PHP-FPM run the playbook as below .
 ````
