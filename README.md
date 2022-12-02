@@ -12,8 +12,11 @@
   
 
   * PREREQUISITIES FOR THIS PROJECT
-
-    * ANSIBLE MUST BE INSTALLED
+       -- ANSIBLE MUST BE INSTALLED
+    
+  * Feature
+    * Easy to install wordpress and drupal on an ubuntu machine
+   
        
 * This playbook is used for installing Wordpress and Drupal using ansible on UBUNTU with nginx,mariadb and php-fpm.
 
