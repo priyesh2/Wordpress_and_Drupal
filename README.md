@@ -82,12 +82,11 @@
   ## INSTALLING NGINX AND PHP-FPM
   
   - name: "Installing nginx and php-fpm"
-      apt:
-        name: "{{ packs }}"
-        state: present  
-      tags:
-        - stack
-        - 
+    apt:
+      name: "{{ packs }}"
+      state: present  
+    tags:
+       
   ## CREATING DOCUMENTROOT FOR WORDPRESS AND DRUPAL INSTALLATION
   
     - name: "Creating document root for drupal "
@@ -237,10 +236,10 @@
   ## DOWNLOADIND AND EXTRACRTING DRUPAL AND WORDPRESS TO A TEMPORARY PATH IN REMOTE SOURCE
   
      - name: "Downloading drupal"
-      get_url:
+       get_url:
         url: "{{ drupal_url }}"
         dest: /tmp/drupal-10.0.0-rc1.tar.gztar.gz
-      tags:
+       tags:
         - drupal
 
     - name: "Downloading wordpress"
@@ -302,7 +301,7 @@
 
   ## RESTARTING SERVICES
 
-     - name: "Restarting services"
+    - name: "Restarting services"
       service:
         name: "{{ item }}"
         state: restarted
