@@ -80,7 +80,7 @@
   ## TO SETUP MARIADB EXTRA DATABASE,USER AND PASSWORD.
   ---
 - name: "Wordpress or Drupal installation"
-  hosts: ubantu
+  hosts: ubuntu
   become: true
   vars_files:
     - combined.vars
