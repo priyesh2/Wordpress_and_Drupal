@@ -21,7 +21,7 @@
 
 * Before running playbook , make changes to the hosts inventory , you can use the hosts from the default location or can be created on any location as per your need.
 
-  -Sample hosts entry
+  * Sample hosts entry
   ````
   [ubuntu]
   172.31.41.53 ansible_user="ubuntu" ansible_port=22 ansible_ssh_private_key_file="key.pem"
