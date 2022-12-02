@@ -34,7 +34,14 @@
       * Ansible default inventory file
 
         -- /etc/ansible/hosts
-      
+        
+      * Ansible configuration files  
+      ````
+      $ ls -l /etc/ansible/
+        -rw-r--r-- 1 root root 19985 Jul  1  2021 ansible.cfg
+        -rw-r--r-- 1 root root  1016 Jul  1  2021 hosts
+        drwxr-xr-x 2 root root     6 Jul  1  2021 roles
+      ````
 * This playbook is used for installing Wordpress and Drupal using ansible on UBUNTU with nginx,mariadb and php-fpm.
 
 * Before running playbook  make changes to the hosts inventory , you can use the hosts from the default location or can be created on any location as per your need.
