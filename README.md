@@ -13,7 +13,7 @@
 
   * Prerequisites for this project
 
-    * INSTALLING ANSIBLE( I have used an ec2 instance amazon linux as the ansible master)
+    * INSTALLING ANSIBLE( I have used an ec2 instance with amazon linux as the ansible master)
      ````
      $ sudo amazon-linux-extras install ansible2 -y
      
@@ -26,7 +26,7 @@
        executable location = /usr/bin/ansible
        python version = 2.7.18 (default, May 25 2022, 14:30:51) [GCC 7.3.1 20180712 (Red Hat 7.3.1-15)]
       ````
-* This playbook is used for installing Wordpress and Drupal using ansible on ubuntu with nginx,mariadb and php-fpm.
+* This playbook is used for installing Wordpress and Drupal using ansible on UBUNTU with nginx,mariadb and php-fpm.
 
 * Before running playbook , make changes to the hosts inventory , you can use the hosts from the default location or can be created on any location as per your need.
 
