@@ -38,17 +38,10 @@
   
 * I have configured the DNS Records in route53 after running the playbook
 
-* What is route53? use the url to find about it.
+* What is route53?.
 
      URL: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html
 
--- Domain names i have used
- 
-    For wordpress : wordpress.sageos.tk
-    
-    For drupal : drupal.sageos.tk
-    
-    FROM the combined.vars file , you can update the domain names i have used and change it according to your need.
   
   {THIS IS USED FOR A FLEXIBLE INSTALLATION OF DRUPAL AND WORDPRESS ON UBUNTU}
   
