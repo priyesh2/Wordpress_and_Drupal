@@ -112,7 +112,7 @@
    
      - name: "Creating virtual host for drupal"
        template:
-        src: nginxconfub.tmpl
+        src: nginxconfub.tmpl (TEMPLATE WHICH CONTAINS THE NGINX CONFIGURATION REQUIRE FOR THE DRUPAL WEBSITE)
         dest: "{{ drupal_conf_dest }}"
         owner: "{{ nginx_conf_owner }}"
         group: "{{ nginx_conf_group }}"
@@ -121,7 +121,7 @@
 
     - name: "Creating virtual host for wordpress"
       template:
-        src: nginxconfub1.tmpl
+        src: nginxconfub1.tmpl(TEMPLATE WHICH CONTAINS THE NGINX CONFIGURATION REQUIRE FOR THE WORDPRESS WEBSITE)
         dest: "{{ wordpress_conf_dest }}"
         owner: "{{ nginx_conf_owner }}"
         group: "{{ nginx_conf_group }}"
@@ -187,7 +187,7 @@
      
     - name: "Copying template for mysql"
       template:
-        src: my.cnf.tmpl
+        src: my.cnf.tmpl(MYSQL USER AND PASSWORD IS PREDEFINED IN HERE TO AVOID INSTALLATION ERROR WHEN RUNNING THE SCRIPT AS PER YOUR NEED)
         dest: /root/.my.cnf
         owner: root
         group: root
