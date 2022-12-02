@@ -8,7 +8,7 @@
  Its modularity regarding plugins, modules, inventories, and playbooks make Ansible the perfect companion to orchestrate large environments.
  Ansible is very lightweight and consistent, and no constraints regarding the operating system or underlying hardware are present.
  It is also very secure due to its agentless capabilities and due to the use of OpenSSH security features.
- Another advantage that encourages the adoption of Ansible is its smooth learning curve determined by the comprehensive documentation and easy to learn structure and    configuration.
+ Another advantage that encourages the adoption of Ansible is its smooth learning curve determined by the comprehensive documentation and easy to learn structure and configuration
   ```
 
   * Prerequisites for this project
