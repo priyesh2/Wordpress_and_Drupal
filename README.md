@@ -362,7 +362,7 @@
 
 * FOR INSTALLING NGINX ,MARIADB AND PHP-FPM run the playbook as below .
 ````
-$ ansible-playbook -i hosts combined.yml --tag=stack
+ [ec2-user@ap-south-1 ~]$ ansible-playbook -i hosts combined.yml --tag=stack
   
 Do you want to install MariaDB (yes/no)?: yes
 Enter mysql extra database [demo_db]: demodb
@@ -431,7 +431,7 @@ PLAY RECAP *********************************************************************
 * FOR WORDPRESS INSTALLTAION run the playbook as below.
 
 ````
-$ ansible-playbook -i hosts combined.yml --tag=stack,wordpress
+ [ec2-user@ap-south-1 ~]$ ansible-playbook -i hosts combined.yml --tag=stack,wordpress
    
 Do you want to install MariaDB (yes/no)?: yes
 Enter mysql extra database [demo_db]: wp_db
@@ -517,7 +517,7 @@ PLAY RECAP *********************************************************************
 
 * FOR DRUPAL INSTALLTAION run the playbook as below.
  ```` 
-$ ansible-playbook -i hosts combined.yml --tag=stack,drupal
+ [ec2-user@ap-south-1 ~]$ ansible-playbook -i hosts combined.yml --tag=stack,drupal
   
 Do you want to install MariaDB (yes/no)?: yes
 Enter mysql extra database [demo_db]: drupal_db
