@@ -1,10 +1,10 @@
 # Wordpress_and_Drupal installtion using ansible-playbook with tags
 
-# Prerequisites for this project
+  * Prerequisites for this project
 
-  * INSTALLING ANSIBLE
+    * INSTALLING ANSIBLE
    
-    URL : https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
+      URL : https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 
 * This playbook is used for installing Wordpress and Drupal using ansible on ubuntu with nginx,mariadb and php-fpm.
 
