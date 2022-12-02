@@ -340,7 +340,7 @@
  ````
  ### RUNNING THE PLAYBOOK...............
 
-* FOR INSTALLING NGINX ,MARIADB AND PHP-FPM run the playbook as below .
+* FOR INSTALLING NGINX,MARIADB AND PHP-FPM
 ````
  [ec2-user@ap-south-1 ~]$ ansible-playbook -i hosts combined.yml --tag=stack
   
@@ -408,7 +408,7 @@ PLAY RECAP *********************************************************************
 
 ````  
    
-* FOR WORDPRESS INSTALLTAION run the playbook as below.
+* FOR WORDPRESS INSTALLTAION
 
 ````
  [ec2-user@ap-south-1 ~]$ ansible-playbook -i hosts combined.yml --tag=stack,wordpress
@@ -495,7 +495,7 @@ PLAY RECAP *********************************************************************
  
  ```` 
 
-* FOR DRUPAL INSTALLTAION run the playbook as below.
+* FOR DRUPAL INSTALLTAION
  ```` 
  [ec2-user@ap-south-1 ~]$ ansible-playbook -i hosts combined.yml --tag=stack,drupal
   
