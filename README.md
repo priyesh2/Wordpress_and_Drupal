@@ -535,13 +535,12 @@ PLAY RECAP *********************************************************************
 
 ````
 
-* I have configured the DNS Records in route53 after running the playbook
+* You can configure the DNS records and complete the installation , I have used route53 in here.
 
 * What is route53?.
 
      URL: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html
 
-   
   ----------------------------------------------------------------------------
   {THIS PLAYBOOK IS USED FOR A FLEXIBLE INSTALLATION OF DRUPAL AND WORDPRESS ON UBUNTU}
 
