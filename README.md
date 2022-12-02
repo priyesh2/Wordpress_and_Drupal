@@ -286,16 +286,16 @@
       tags:
         - lamp 
 ````
-* Here we are using ansible playbook for the installation process using tags
 
- - We have used tags like drupal , wordpress , stack (stack is required for installation of both wordpress and drupal)
-   
+ - Used tags -- drupal , wordpress , stack (stack is required for installation of both wordpress and drupal)
+
+````
    drupal - for drupal installation
    
    wordpress - for wordpress installation
    
    stack - for installing nginx,php-fpm and mariadb
-   
+ ````
 
 * FOR INSTALLING NGINX ,MARIADB AND PHP_FPM 
 
