@@ -287,7 +287,7 @@
         - lamp 
 ````
 
- - Used tags -- drupal , wordpress , stack (stack is required for installation of both wordpress and drupal)
+ - TAGS USED -- drupal , wordpress , stack (stack is required for installation of both wordpress and drupal)
 
 ````
    drupal - for drupal installation
@@ -297,7 +297,7 @@
    stack - for installing nginx,php-fpm and mariadb
  ````
 
-* FOR INSTALLING NGINX ,MARIADB AND PHP_FPM with output.
+* FOR INSTALLING NGINX ,MARIADB AND PHP-FPM run the playbook as below .
 ````
 $ ansible-playbook -i hosts combined.yml --tag=stack
   
@@ -365,7 +365,7 @@ PLAY RECAP *********************************************************************
 
 ````  
    
-* FOR WORDPRESS INSTALLTAION run the playbook as below with output.
+* FOR WORDPRESS INSTALLTAION run the playbook as below.
 
 ````
 $ ansible-playbook -i hosts combined.yml --tag=stack,wordpress
@@ -452,7 +452,7 @@ PLAY RECAP *********************************************************************
  
  ```` 
 
-* FOR DRUPAL INSTALLTAION run the playbook as below with output.
+* FOR DRUPAL INSTALLTAION run the playbook as below.
  ```` 
 $ ansible-playbook -i hosts combined.yml --tag=stack,drupal
   
@@ -544,8 +544,6 @@ PLAY RECAP *********************************************************************
   ----------------------------------------------------------------------------
   {THIS PLAYBOOK IS USED FOR A FLEXIBLE INSTALLATION OF DRUPAL AND WORDPRESS ON UBUNTU}
 
-  
-  
-  
+ 
   Note : In future i will add support for other distributions
           
