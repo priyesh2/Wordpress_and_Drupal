@@ -47,7 +47,7 @@
       salt: "sample" 
   tasks:
   
-  ## ADDING REPOSITORY FOR THE INSTALLATION OF PHP_FPM
+  ## ADDING REPOSITORY FOR THE INSTALLATION OF PHP-FPM
   
   - name: "Pre Installation"
       become: yes
