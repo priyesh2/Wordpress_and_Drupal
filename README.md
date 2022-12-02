@@ -13,7 +13,7 @@
   -Sample hosts file has been uploaded.
  
 # EXPLAINING THE PLAYBOOK
-
+````
   ## TO SETUP MARIADB EXTRA DATABASE,USER AND PASSWORD.
   ---
 - name: "Wordpress or Drupal installation"
@@ -285,7 +285,7 @@
         - "php8.1-fpm"
       tags:
         - lamp 
-
+````
 * Here we are using ansible playbook for the installation process using tags
 
  - We have used tags like drupal , wordpress , stack (stack is required for installation of both wordpress and drupal)
