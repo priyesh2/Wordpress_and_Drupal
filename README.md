@@ -338,7 +338,7 @@
    
    stack - for installing nginx,php-fpm and mariadb
  ````
- ### RUNNING THE PLAYBOOK...............
+ ### RUNNING THE PLAYBOOK
 
 * FOR INSTALLING NGINX,MARIADB AND PHP-FPM
 ````
