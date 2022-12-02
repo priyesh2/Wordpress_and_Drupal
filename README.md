@@ -33,7 +33,7 @@
   
   * Make sure that the hosts are accessible from the ansible master server by issuing a ping command
    ````
-   [ec2-user@ap-south-1 ~]$ ansible -i hosts all -m ping
+   ansible -i hosts all -m ping
    
    172.31.41.53 | SUCCESS => {
     "ansible_facts": {
@@ -45,7 +45,7 @@
     ````
   * To list out tasks in the playbook
   ````
-    [ec2-user@ap-south-1 ~]$ ansible-playbook -i hosts combined.yml --list-tasks
+    ansible-playbook -i hosts combined.yml --list-tasks
     
     playbook: combined.yml
 
@@ -342,7 +342,7 @@
 
 * FOR INSTALLING NGINX,MARIADB AND PHP-FPM
 ````
- [ec2-user@ap-south-1 ~]$ ansible-playbook -i hosts combined.yml --tag=stack
+ansible-playbook -i hosts combined.yml --tag=stack
   
 Do you want to install MariaDB (yes/no)?: yes
 Enter mysql extra database [demo_db]: demodb
@@ -411,7 +411,7 @@ PLAY RECAP *********************************************************************
 * FOR WORDPRESS INSTALLTAION
 
 ````
- [ec2-user@ap-south-1 ~]$ ansible-playbook -i hosts combined.yml --tag=stack,wordpress
+ansible-playbook -i hosts combined.yml --tag=stack,wordpress
    
 Do you want to install MariaDB (yes/no)?: yes
 Enter mysql extra database [demo_db]: wp_db
@@ -497,7 +497,7 @@ PLAY RECAP *********************************************************************
 
 * FOR DRUPAL INSTALLTAION
  ```` 
- [ec2-user@ap-south-1 ~]$ ansible-playbook -i hosts combined.yml --tag=stack,drupal
+ansible-playbook -i hosts combined.yml --tag=stack,drupal
   
 Do you want to install MariaDB (yes/no)?: yes
 Enter mysql extra database [demo_db]: drupal_db
