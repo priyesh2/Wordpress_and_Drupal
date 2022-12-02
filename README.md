@@ -27,6 +27,19 @@
   172.31.41.53 ansible_user="ubuntu" ansible_port=22 ansible_ssh_private_key_file="key.pem"
   
   ````
+  
+  * Make sure that the hosts are accessible from the ansible server by issuing a ping command
+  
+   $ ansible -i hosts all -m ping
+    ````
+   172.31.41.53 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+   }
+    ````
 # EXPLAINING THE PLAYBOOK
 ````
   ## TO SETUP MARIADB EXTRA DATABASE,USER AND PASSWORD.
