@@ -11,39 +11,10 @@
  Another advantage that encourages the adoption of Ansible is its smooth learning curve determined by the comprehensive documentation and easy to learn structure and configuration
   
 
-  * Prerequisites for this project
+  * PREREQUISITIES FOR THIS PROJECT
 
-    * INSTALLING ANSIBLE( I have used an ec2 instance with amazon linux as the ansible master)
-     ````
-     $ sudo amazon-linux-extras install ansible2 -y
-     
-     $ ansible --version
-       ansible 2.9.23
-       config file = /etc/ansible/ansible.cfg
-       configured module search path = [u'/home/ec2-user/.ansible/plugins/modules',
-                                   u'/usr/share/ansible/plugins/modules']
-       ansible python module location = /usr/lib/python2.7/site-packages/ansible
-       executable location = /usr/bin/ansible
-       python version = 2.7.18 (default, May 25 2022, 14:30:51) [GCC 7.3.1 20180712 (Red Hat 7.3.1-15)]
-      ````
-      
-         * I have used another ec2 instance with ubuntu distribution as the ansible client.
-      
-      * Ansible main configuration
-        
-        -- /etc/ansible/ansible.cfg
-        
-      * Ansible default inventory file
-
-        -- /etc/ansible/hosts
-        
-      * Ansible configuration files  
-      ````
-      $ ls -l /etc/ansible/
-        -rw-r--r-- 1 root root 19985 Jul  1  2021 ansible.cfg
-        -rw-r--r-- 1 root root  1016 Jul  1  2021 hosts
-        drwxr-xr-x 2 root root     6 Jul  1  2021 roles
-      ````
+    * ANSIBLE MUST BE INSTALLED
+       
 * This playbook is used for installing Wordpress and Drupal using ansible on UBUNTU with nginx,mariadb and php-fpm.
 
 * Before running playbook  make changes to the hosts inventory , you can use the hosts from the default location or can be created on any location as per your need.
