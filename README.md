@@ -27,6 +27,8 @@
        python version = 2.7.18 (default, May 25 2022, 14:30:51) [GCC 7.3.1 20180712 (Red Hat 7.3.1-15)]
       ````
       
+         * I have used another ec2 instance with ubuntu distribution as the ansible client.
+      
       * Ansible main configuration
         
         -- /etc/ansible/ansible.cfg
