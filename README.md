@@ -1,5 +1,16 @@
 # Wordpress_and_Drupal installtion on ansible-playbook using tags
 
+### Why use Ansible?
+ ```
+ Here are some important pros/benefits of using Ansible
+ One of the most significant advantages of Ansible is that it is free to use by everyone.
+ It does not need any special system administrator skills to install and use Ansible, and the official documentation is very comprehensive.
+ Its modularity regarding plugins, modules, inventories, and playbooks make Ansible the perfect companion to orchestrate large environments.
+ Ansible is very lightweight and consistent, and no constraints regarding the operating system or underlying hardware are present.
+ It is also very secure due to its agentless capabilities and due to the use of OpenSSH security features.
+ Another advantage that encourages the adoption of Ansible is its smooth learning curve determined by the comprehensive documentation and easy to learn structure and     configuration.
+  ```
+
   * Prerequisites for this project
 
     * INSTALLING ANSIBLE
