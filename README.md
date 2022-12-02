@@ -13,10 +13,19 @@
 
   * Prerequisites for this project
 
-    * INSTALLING ANSIBLE
-   
-      URL : https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
-
+    * INSTALLING ANSIBLE( I have used amazon linux as the ansible master)
+     ````
+     $ sudo amazon-linux-extras install ansible2 -y
+     
+     $ ansible --version
+       ansible 2.9.23
+       config file = /etc/ansible/ansible.cfg
+       configured module search path = [u'/home/ec2-user/.ansible/plugins/modules',
+                                   u'/usr/share/ansible/plugins/modules']
+      ansible python module location = /usr/lib/python2.7/site-packages/ansible
+      executable location = /usr/bin/ansible
+      python version = 2.7.18 (default, May 25 2022, 14:30:51) [GCC 7.3.1 20180712 (Red Hat 7.3.1-15)]
+      ````
 * This playbook is used for installing Wordpress and Drupal using ansible on ubuntu with nginx,mariadb and php-fpm.
 
 * Before running playbook , make changes to the hosts inventory , you can use the hosts from the default location or can be created on any location as per your need.
