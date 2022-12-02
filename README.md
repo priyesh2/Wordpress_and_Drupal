@@ -297,7 +297,7 @@
       tags:
         - stack 
   
-  ## DOWNLOADIND AND EXTRACRTING DRUPAL AND WORDPRESS TO A TEMPORARY PATH IN REMOTE SOURCE
+  ## DOWNLOADING AND EXTRACTING DRUPAL AND WORDPRESS TO A TEMPORARY PATH IN REMOTE SOURCE
   
      - name: "Downloading drupal"
        get_url:
@@ -351,7 +351,7 @@
       tags:
         - wordpress
 
-  ## LOADING wp-config.php as a template from local machine to remote source
+  ## LOADING wp-config.php as a template from ansible master server to remote source
     
     - name: "Creating wp-config.php from template"
       template:
