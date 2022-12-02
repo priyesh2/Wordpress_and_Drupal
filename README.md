@@ -48,7 +48,7 @@
 
 * Before running playbook  make changes to the hosts inventory , you can use the hosts from the default location or can be created on any location as per your need.
 
-  * Sample hosts entry for configuring the ansible client in the master server.
+  * Sample hosts entry for configuring the ansible client in the ansible master server.
  
   ````
   [ubuntu]
@@ -56,7 +56,7 @@
   
   ````
   
-  * Make sure that the hosts are accessible from the ansible server by issuing a ping command
+  * Make sure that the hosts are accessible from the ansible master server by issuing a ping command
   
    $ ansible -i hosts all -m ping
     ````
