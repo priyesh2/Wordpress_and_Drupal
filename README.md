@@ -40,6 +40,42 @@
     "ping": "pong"
    }
     ````
+  * To list out tasks in the playbook
+   
+   $ ansible-playbook -i hosts combined.yml --list-tasks
+    ````
+    playbook: combined.yml
+
+  play #1 (ubantu): Wordpress or Drupal installation    TAGS: []
+    tasks:
+      Pre Installation  TAGS: [stack]
+      Installing nginx and php-fpm      TAGS: [stack]
+      Creating document root for drupal         TAGS: [drupal]
+      Creating document root for wordpress      TAGS: [wordpress]
+      Creating virtual host for drupal  TAGS: [drupal]
+      Creating virtual host for wordpress       TAGS: [wordpress]
+      removing deafault conf    TAGS: [stack]
+      Restarting and enabling services  TAGS: [stack]
+       installing needful packages      TAGS: [stack]
+      Installing mysql client   TAGS: [stack]
+      Installing mariadb-server TAGS: [stack]
+      Restarting and enable mariadb-server      TAGS: [stack]
+      Copying template for mysql        TAGS: [stack]
+      Setting root password     TAGS: [stack]
+      Remove anonymous user     TAGS: [stack]
+       Remove test db   TAGS: [stack]
+      Creating new database {{ extra_db }}      TAGS: [stack]
+      Creating new user {{ extra_user }}        TAGS: [stack]
+      Downloading drupal        TAGS: [drupal]
+      Downloading wordpress     TAGS: [wordpress]
+      Extracting drupal zip     TAGS: [drupal]
+      Extracting Wordpress zip  TAGS: [wordpress]
+      Copying files to documentroot /var/www/html/{{ drupal_domain }}   TAGS: [drupal]
+      Copying files to documentroot /var/www/html/{{ wordpress_domain }}        TAGS: [wordpress]
+      Creating wp-config.php from template      TAGS: [wordpress]
+      Restarting services       TAGS: [stack]
+   ````
+ 
 # EXPLAINING THE PLAYBOOK
 ````
   ## TO SETUP MARIADB EXTRA DATABASE,USER AND PASSWORD.
