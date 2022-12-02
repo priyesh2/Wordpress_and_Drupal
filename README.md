@@ -612,3 +612,8 @@ PLAY RECAP *********************************************************************
  
   Note : In future i will add support for other distributions
           
+### ⚙️ Connect with Me
+
+<p align="center">
+<a href="mailto:priyesh241997@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+<a href="https://www.linkedin.com/in/priyesh-p-34359515a"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a> 
