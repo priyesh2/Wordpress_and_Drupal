@@ -84,7 +84,7 @@
       tags:
         - wordpress
 
-  ## CREATING VIRTUALHOST FOR DRUAPAL AND WORDPRESS
+  ## CREATING VIRTUALHOST FOR CONFIGURING DRUAPAL AND WORDPRESS
    
      - name: "Creating virtual host for drupal"
        template:
