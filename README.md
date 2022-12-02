@@ -26,9 +26,18 @@
        executable location = /usr/bin/ansible
        python version = 2.7.18 (default, May 25 2022, 14:30:51) [GCC 7.3.1 20180712 (Red Hat 7.3.1-15)]
       ````
+      
+      * Ansible main configuration
+        
+        -- /etc/ansible/ansible.cfg
+        
+      * Ansible default inventory file
+
+        -- /etc/ansible/hosts
+      
 * This playbook is used for installing Wordpress and Drupal using ansible on UBUNTU with nginx,mariadb and php-fpm.
 
-* Before running playbook , make changes to the hosts inventory , you can use the hosts from the default location or can be created on any location as per your need.
+* Before running playbook  make changes to the hosts inventory , you can use the hosts from the default location or can be created on any location as per your need.
 
   * Sample hosts entry
   ````
