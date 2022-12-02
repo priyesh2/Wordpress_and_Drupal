@@ -44,7 +44,7 @@
 
    
   ----------------------------------------------------------------------------
-  {THIS IS USED FOR A FLEXIBLE INSTALLATION OF DRUPAL AND WORDPRESS ON UBUNTU}
+  {THIS PLAYBOOK IS USED FOR A FLEXIBLE INSTALLATION OF DRUPAL AND WORDPRESS ON UBUNTU}
 
   
   
