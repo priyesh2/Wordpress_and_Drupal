@@ -81,8 +81,7 @@
  
 # EXPLAINING THE PLAYBOOK
 ````
-  ## TO SETUP MARIADB EXTRA DATABASE,USER AND PASSWORD.
-  ---
+---
 - name: "Wordpress or Drupal installation"
   hosts: ubuntu
   become: true
@@ -109,25 +108,21 @@
       salt_size: 15
       salt: "sample" 
   tasks:
-  
-  ## ADDING REPOSITORY FOR THE INSTALLATION OF PHP-FPM
-  
-  - name: "Pre Installation"
+    
+    - name: "Pre Installation"
       become: yes
       apt_repository: repo=ppa:ondrej/php
       tags:
         - stack
-        
-  ## INSTALLING NGINX AND PHP-FPM
-  
-  - name: "Installing nginx and php-fpm"
-    apt:
-      name: "{{ packs }}"
-      state: present  
-    tags:
-       
-  ## CREATING DOCUMENTROOT FOR WORDPRESS AND DRUPAL INSTALLATION
-  
+
+    - name: "Installing nginx and php-fpm"
+      apt:
+        name: "{{ packs }}"
+        state: present
+        update_cache: yes
+      tags:
+        - stack
+
     - name: "Creating document root for drupal "
       file:
          path: "{{ drupal_path }}"
@@ -145,30 +140,26 @@
          group: "{{ nginx_group }}"
       tags:
         - wordpress
-
-  ## CREATING VIRTUALHOST FOR CONFIGURING DRUAPAL AND WORDPRESS
-   
-     - name: "Creating virtual host for drupal"
-       template:
-        src: nginxconfub.tmpl (TEMPLATE WHICH CONTAINS THE NGINX CONFIGURATION REQUIRE FOR THE DRUPAL WEBSITE)
+  
+    - name: "Creating vhost for drupal"
+      template:
+        src: nginxconfub.tmpl
         dest: "{{ drupal_conf_dest }}"
         owner: "{{ nginx_conf_owner }}"
         group: "{{ nginx_conf_group }}"
       tags:
         - drupal
 
-    - name: "Creating virtual host for wordpress"
+    - name: "Creating vhost for wordpress"
       template:
-        src: nginxconfub1.tmpl(TEMPLATE WHICH CONTAINS THE NGINX CONFIGURATION REQUIRE FOR THE WORDPRESS WEBSITE)
+        src: nginxconfub1.tmpl
         dest: "{{ wordpress_conf_dest }}"
         owner: "{{ nginx_conf_owner }}"
         group: "{{ nginx_conf_group }}"
       tags:
         - wordpress
 
-   ## REMOVING NGINX DEFAULT CONF
-   
-    - name: "removing deafault conf"
+    - name: "Removing default conf"
       ansible.builtin.file:
         path: /etc/nginx/sites-enabled/default
         state: absent
@@ -176,8 +167,6 @@
       tags:
         - stack
 
-  ## RESTARTING AND ENABLING NGINX AND PHP-FPM
-     
     - name: "Restarting and enabling services"
       service:
         name: "{{ item }}"
@@ -188,18 +177,14 @@
         - "php8.1-fpm"
       tags:
         - stack
-
-  ## INSTALLING SOME ADDITIONAL PACKAGES 
-  
-    - name: " installing needful packages"
+    
+    - name: "Installing needful packages"
       apt: 
         name: "{{ needs }}"
         state: present
       tags:
         - stack
-   
-  ## SETTING UP MARIADB SERVER
-     
+
     - name: "Installing mysql client"
       pip:
         name: mysqlclient
@@ -225,7 +210,7 @@
      
     - name: "Copying template for mysql"
       template:
-        src: my.cnf.tmpl(MYSQL USER AND PASSWORD IS PREDEFINED IN HERE TO AVOID INSTALLATION ERROR WHEN RUNNING THE SCRIPT AS PER YOUR NEED)
+        src: my.cnf.tmpl
         dest: /root/.my.cnf
         owner: root
         group: root
@@ -249,7 +234,7 @@
       tags:
         - stack
 
-    - name: " Remove test db"
+    - name: "Remove test db"
       mysql_db:
         name: "test"
         state: absent
@@ -271,14 +256,12 @@
         priv: '{{ extra_db }}.*:ALL'
       tags:
         - stack 
-  
-  ## DOWNLOADING AND EXTRACTING DRUPAL AND WORDPRESS TO A TEMPORARY PATH IN REMOTE SOURCE
-  
-     - name: "Downloading drupal"
-       get_url:
+     
+    - name: "Downloading drupal"
+      get_url:
         url: "{{ drupal_url }}"
         dest: /tmp/drupal-10.0.0-rc1.tar.gztar.gz
-       tags:
+      tags:
         - drupal
 
     - name: "Downloading wordpress"
@@ -288,7 +271,7 @@
       tags:
         - wordpress
      
-    - name: "Extracting drupal zip"
+    - name: "Extracting drupal archive"
       unarchive:
         src: /tmp/drupal-10.0.0-rc1.tar.gztar.gz
         dest: /tmp/
@@ -296,7 +279,7 @@
       tags:
         - drupal
     
-    - name: "Extracting Wordpress zip"
+    - name: "Extracting Wordpress archive"
       unarchive:
         src: /tmp/wordpress.tar.gz
         dest: /tmp/
@@ -304,9 +287,7 @@
       tags:
         - wordpress
 
-  ## COPYING FILES OF DRUPAL AND WORDPRESS TO THE DOCROOT
-     
-     - name: "Copying files to documentroot /var/www/html/{{ drupal_domain }}"
+    - name: "Copying files to documentroot /var/www/html/{{ drupal_domain }}"
       copy:
         src: /tmp/drupal-10.0.0-rc1/
         dest: "/var/www/html/{{ drupal_domain }}"
@@ -325,9 +306,7 @@
         remote_src: true
       tags:
         - wordpress
-
-  ## LOADING wp-config.php as a template from ansible master server to remote source
-    
+            
     - name: "Creating wp-config.php from template"
       template:
         src: wordpress.config.tmpl
@@ -336,10 +315,7 @@
         group: "{{ nginx_group }}"
       tags:
         - wordpress
-
-
-  ## RESTARTING SERVICES
-
+            
     - name: "Restarting services"
       service:
         name: "{{ item }}"
@@ -350,7 +326,7 @@
         - "nginx"
         - "php8.1-fpm"
       tags:
-        - lamp 
+        - stack
 ````
 
  - TAGS USED -- drupal , wordpress , stack (stack is required for installation of both wordpress and drupal)
